@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Metro UI -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/current/metro.css">
+    <link href="https://cdn.metroui.org.ua/dev/icons.css" rel="stylesheet">
+
+    <!-- BOOSTRAP LINKS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        .sidebar {
+            background-color: #2c3e50;
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+        
+        .sidebar a {
+            padding: 10px 8px 10px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+        }
+        
+        .sidebar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: white;
+}
+
+::placeholder {
+  color: rgb(165, 155, 155);
+  opacity: 1; 
+}
+        
+    </style>
+</head>
+
+<body class="bg-lightGray">
+
+    <!-- navbar -->
+    <div data-role="appbar" data-expand-point="md" class="bg-darkIndigo p-4 pb-6 fg-white d-flex flex-align-center fixed-top">
+        <a href="index.html" class="no-hover">
+            <div style="flex-direction: row;flex-wrap: wrap;">
+                <div data-role="activity" data-type="atom" data-style="color"></div>
+            <div><span class="fg-white h1 ml-3">Indago</span>&reg;</div>
+            </div>
+        </a>
+
+        <ul class="mt-3 app-bar-menu ml-auto flex-align-center">
+            <li class="border-radius-10">
+                <a href="index.html" class="border-radius-10">
+                    <span class="mif-home mif-2x mr-2"></span>
+                    <span class="text-leader">Home</span>
+                </a>
+            </li>
+            <li class="border-radius-10">
+                <a href="login.html" class="border-radius-10">
+                    <span class="mif-enter mif-2x mr-2"></span>
+                    <span class="text-leader">Login</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+
+    <div class="sidebar bg-darkIndigo fixed-left">
+        <br><br><br><br><br>
+        <a href="MyProfile.html" style="text-decoration: none;">My Profile</a>
+        <a href="createPoll.html" style="text-decoration: none;background-color: #ddd;color: black;">Create Poll</a>
+        <a href="createdPolls.html" style="text-decoration: none;">Created Polls</a>
+        <a href="ResponsedPolls.html" style="text-decoration: none;">Responded Polls</a>
+    </div>
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+    <center>
+        <div class="inner-box w-50 bg-white p-10 drop-shadow" style="height: max-content; ;">
+            <h1 class="text-center mt-5">Create Poll</h1>
+                <input class="bg-darkIndigo" type="text" placeholder="Your Question Here ...">
+                <button class="btn btn-info w-10" style="width: 50px;" onclick="addTextBox()">+</button>
+                    <div id="textBoxContainer">
+                        <input class="bg-darkIndigo" type="text" placeholder="Option1">
+                    </div>
+                <button class="btn btn-success">Create</button>
+        </div>
+        
+    </center>
+
+
+    
+    <!-- Metro UI -->
+    <script src="https://cdn.metroui.org.ua/current/metro.js"></script>
+
+    <!-- JQuery Bootstrap -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <script>
+    let counter = 2;
+
+function addTextBox() {
+    const textBoxContainer = document.getElementById('textBoxContainer');
+    const newTextBox = document.createElement('input');
+    newTextBox.className = 'bg-darkIndigo';
+    newTextBox.type = 'text';
+    newTextBox.placeholder = 'Option' + counter;
+    textBoxContainer.appendChild(newTextBox);
+    counter++;
+}
+  </script>
+  
+</body>
+
+</html>
